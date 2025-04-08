@@ -48,6 +48,7 @@ class CustomUser(AbstractUser):
     image = GenderedImageField(upload_to='profile/', blank=True)
 
     dob = models.DateField(null=True, blank=True)
+    phone_no = models.CharField(max_length=255)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'dob']
