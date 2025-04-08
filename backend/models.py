@@ -16,12 +16,12 @@ class GenderedImageField(models.ImageField):
             # default gender
             gender = model_instance.gender if hasattr(model_instance, 'gender') else Gender.MALE
             if gender == Gender.MALE:
-                value = 'profile/male_avatar.png'
+                value = 'profile/male_avatar.jpg'
             elif gender == Gender.FEMALE:
-                value = 'profile/female_avatar.png'
+                value = 'profile/female_avatar.jpg'
             else:
                 # fallback default image
-                value = 'profile/default_image.jpg'
+                value = 'profile/default_image.png'
 
         elif model_instance.gender != getattr(model_instance, f"{self.attname}_gender_cache", None):
             # If gender has changed
